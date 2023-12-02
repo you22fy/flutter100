@@ -1,9 +1,10 @@
-import 'package:app02_counter/counter.dart';
+import 'package:app02_counter/flutter_counter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends HookWidget {
@@ -18,9 +19,20 @@ class MyApp extends HookWidget {
         useMaterial3: true,
       ),
       home: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'FlutterCounter',
+            style: TextStyle(
+              color: Colors.pink.shade900,
+              fontSize: 24,
+            ),
+          ),
+        ),
         body: ColoredBox(
-          color: Colors.lightBlue.shade100,
-          child: const Counter(),
+          color: Colors.pink.shade100,
+          child: const Center(
+            child: FlutterCounter(),
+          ),
         ),
       ),
     );
