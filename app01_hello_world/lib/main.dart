@@ -1,3 +1,4 @@
+import 'package:app01_hello_world/hello_world.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,23 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
       home: Scaffold(
-        body: Center(
-          child: Text(
-            'Hello World',
-            style: TextStyle(
-              fontSize: 48,
-              color: Colors.pink[200],
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
+        body: HelloWorld(),
       ),
     );
   }
