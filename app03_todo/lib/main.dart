@@ -64,25 +64,26 @@ class TodoListPage extends ConsumerWidget {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Add ToDo'),
+        title: const Text('Todoを追加する'),
         content: TextField(
           controller: controller,
-          decoration: const InputDecoration(hintText: 'ToDo title'),
+          decoration: const InputDecoration(hintText: 'タイトル'),
         ),
-        actions: <Widget>[
+        actions: [
           TextButton(
-            child: const Text('Cancel'),
+            child: const Text('キャンセル'),
             onPressed: () => Navigator.of(context).pop(),
           ),
           TextButton(
-            child: const Text('Add'),
+            autofocus: true,
             onPressed: () {
-              final title = controller.text.trim();
+              final title = controller.text;
               if (title.isNotEmpty) {
                 ref.read(todoListProvider.notifier).add(title);
                 Navigator.of(context).pop();
               }
             },
+            child: const Text('追加'),
           ),
         ],
       ),
