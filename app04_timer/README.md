@@ -6,3 +6,4 @@ React100本ノックの 04 Timer を Flutter で実装する。
 - flutter_hooks
 - hooks_riverpod
 - intl
+- audioplayers

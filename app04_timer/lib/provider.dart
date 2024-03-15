@@ -40,6 +40,6 @@ class TimerNotifier extends StateNotifier<DateTime> {
 
   void _alert() {
     final player = AudioPlayer();
-    player.play(AssetSource('assets/sounds/sound.mp3'));
+    player.play(AssetSource('assets/sounds/se.mp3'));
   }
 }
