@@ -190,7 +190,11 @@ class CalcApp extends HookConsumerWidget {
                   Button.square(
                     label: '.',
                     onPressed: () {
-                      input.value += '.';
+                      if (input.value == '') {
+                        input.value += '0.';
+                      } else {
+                        input.value += '.';
+                      }
                     },
                   ),
                   const SizedBox(width: 16),
